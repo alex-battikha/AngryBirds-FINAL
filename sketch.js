@@ -130,20 +130,18 @@ function keyPressed(){
     }
 }
 
-async function getBackgroundImg(){
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-    var responseJSON = await response.json();
+async function getBackgroundImg() {
+    var worldTimeResponse = await fetch("http://worldtimeapi.org/api/timezone/America/Los_Angeles");
+    var worldTimeResponseJSON = await worldTimeResponse.json();
 
-    var datetime = responseJSON.datetime;
-    var hour = datetime.slice(11,13);
+    var dateTime = await worldTimeResponseJSON.datetime;
+    var hour = dateTime.slice(11,13);
     
-    if(hour>=0600 && hour<=1900){
-        bg = "sprites/bg1.png";
+    if(hour >= 06 && hour <= 17) {
+        bg = "sprites/bg.png";
     }
-    else{
+    else {
         bg = "sprites/bg2.jpg";
     }
-
     backgroundImg = loadImage(bg);
-    console.log(backgroundImg);
 }
