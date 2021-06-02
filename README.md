@@ -1,2 +1,2 @@
-# AngryBirdsStage3
-Stage 3 Angry Birds: Introducing Constraint
+# AngryBirds - FINAL
+Completed Angry Birds Game. Run on local hosting platform to see it in action
